@@ -10,9 +10,9 @@ export default async function RecommendedVideos({ id }: { id: string }) {
 
   const videos: Video[] = [];
 
-  console.log(recommendedVideos);
 
-  for (const recommendedVideo of recommendedVideos.items) {
+  if(recommendedVideos?.items)
+  for (const recommendedVideo of recommendedVideos?.items) {
     videos.push({
       id: recommendedVideo.id.videoId,
       publishedAt: recommendedVideo.snippet.publishedAt,
@@ -31,8 +31,8 @@ export default async function RecommendedVideos({ id }: { id: string }) {
         </h2>
       </header>
 
-      <article className="recommended-videos">
-        <ul>
+      <article className="recommended-videos ">
+        <ul className="max-xl:grid max-xl:grid-cols-2 max-sm:grid-cols-1 gap-4">
           {videos.map((video: Video) => {
             return (
               <li key={video.id}>

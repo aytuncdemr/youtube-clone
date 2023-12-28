@@ -14,17 +14,17 @@ export default async function VideoPage({
   
   const fetchData = await fetchFromAPI(`videos?id=${params.id}`);
   
-  videoData.id = fetchData.items[0].id;
-  videoData.channelId = fetchData.items[0].snippet.channelId;
-  videoData.channelName = fetchData.items[0].snippet.channelTitle;
-  videoData.publishedAt = convertDate(fetchData.items[0].snippet.publishedAt);
-  videoData.title = fetchData.items[0].snippet.title;
-  videoData.duration = fetchData.items[0].contentDetails.duration;
-  videoData.description = fetchData.items[0].snippet.description;
+  videoData.id = fetchData?.items[0]?.id;
+  videoData.channelId = fetchData?.items[0]?.snippet.channelId;
+  videoData.channelName = fetchData?.items[0]?.snippet.channelTitle;
+  videoData.publishedAt = convertDate(fetchData?.items[0]?.snippet.publishedAt);
+  videoData.title = fetchData?.items[0]?.snippet.title;
+  videoData.duration = fetchData?.items[0]?.contentDetails.duration;
+  videoData.description = fetchData?.items[0]?.snippet.description;
 
   return (
-    <main className="grid grid-cols-[10fr,70fr,20fr] min-h-screen bg-black py-8">
-      <FeedBar></FeedBar>
+    <main className="grid grid-cols-[70fr,20fr] max-xl:flex max-xl:flex-col min-h-screen bg-black py-8">
+      
       <VideoPlayer videoData={videoData}></VideoPlayer>
       <RecommendedVideos id={videoData.id}></RecommendedVideos>
     </main>

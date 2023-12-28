@@ -17,7 +17,7 @@ export default function Video({ video }: { video: Video }) {
           alt={`${video.title}`}
           width={320}
           height={180}
-          className="w-full h-[12rem] rounded-lg"
+          className="w-full h-[12rem] rounded-lg group-hover:brightness-75 duration-300"
         />
 
         <p

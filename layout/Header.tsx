@@ -7,7 +7,7 @@ import SearchBar from "@/components/SearchBar";
 export default function Header() {
   return (
     <header className="bg-black p-6 text-white flex justify-between items-center">
-      <Link href={"/"}>
+      <Link href={"/"} className="max-sm:hidden">
         <Image alt="Logo" src={logo} width={45} height={45}></Image>
       </Link>
       <SearchBar></SearchBar>

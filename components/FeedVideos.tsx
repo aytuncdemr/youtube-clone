@@ -14,7 +14,7 @@ export default function FeedVideos() {
   useEffect(() => {
     (async function () {
       const videosData: any[] = await fetchFromAPI(
-        `search?part=snippet&q=${selectedCategory?.name}`
+        `search?maxResults=50&part=snippet&q=${selectedCategory?.name}`
       );
       setVideos(
         // @ts-ignore

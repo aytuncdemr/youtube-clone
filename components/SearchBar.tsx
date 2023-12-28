@@ -25,7 +25,7 @@ export default function SearchBar() {
   }
 
   return (
-    <div className="search-bar">
+    <div className="search-bar max-sm:mx-auto max-sm:max-w-full">
       <form
         onSubmit={searchHandler}
         className="border border-gray-300  flex rounded-full items-center"
@@ -33,7 +33,7 @@ export default function SearchBar() {
         <input
           type="text"
           placeholder="Search..."
-          className="py-2 px-6 focus:ring-black min-w-[24rem] text-lg placeholder-gray-300 bg-black outline-none text-white rounded-full"
+          className="py-2 px-6 focus:ring-black min-w-[12rem] text-lg placeholder-gray-300 bg-black outline-none text-white rounded-full"
           id="search-id"
           onChange={searchQueryHandler}
           value={searchQuery || ""}

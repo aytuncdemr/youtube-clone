@@ -1,21 +1,16 @@
 "use client";
 
-import Link from "next/link";
 import ReactPlayer from "react-player";
-import Comments from "./Comments";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowDown } from "@fortawesome/free-solid-svg-icons/faArrowDown";
-
 
 export default function VideoPlayer({ videoData }: { videoData: Video }) {
   return (
-    <div className="video-player-container  flex flex-col gap-6 px-16">
+    <div className="video-player-container  flex flex-col gap-6 px-16 max-xl:mb-24 max-md:px-4">
       <div className="video-player relative">
         <ReactPlayer
           controls
           url={`https://www.youtube.com/watch?v=${videoData.id}`}
           width={"100%"}
-          height={"480px"}
+          height={"520px"}
           style={{ position: "relative" }}
         />
       </div>
@@ -24,9 +19,7 @@ export default function VideoPlayer({ videoData }: { videoData: Video }) {
         <h3 className="text-white font-semibold text-2xl">{videoData.title}</h3>
 
         <div className="video-detail flex justify-between py-4 text-lg">
-          <div
-            className="channel-info"
-          >
+          <div className="channel-info">
             <p className="text">{videoData.channelName}</p>
           </div>
           <p>{videoData.publishedAt}</p>
@@ -35,8 +28,6 @@ export default function VideoPlayer({ videoData }: { videoData: Video }) {
           <p>{videoData.description}</p>
         </div>
       </div>
-
-      <Comments></Comments>
     </div>
   );
 }
